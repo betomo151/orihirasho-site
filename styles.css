@@ -1,16 +1,16 @@
 @charset "utf-8";
 
 :root {
-  --bg: #050507;
-  --panel: rgba(255, 255, 255, 0.075);
-  --panel-strong: rgba(255, 255, 255, 0.12);
-  --line: rgba(255, 255, 255, 0.16);
-  --text: #f7f2ff;
-  --muted: rgba(247, 242, 255, 0.68);
-  --accent: #b66cff;
-  --accent-2: #5ce1ff;
-  --accent-3: #ff4ecd;
-  --shadow: 0 30px 90px rgba(0, 0, 0, 0.52);
+  --bg: #f7f1e8;
+  --panel: rgba(255, 249, 242, 0.72);
+  --panel-strong: rgba(234, 213, 194, 0.72);
+  --line: rgba(51, 40, 34, 0.15);
+  --text: #332822;
+  --muted: #78675d;
+  --accent: #c9785c;
+  --accent-2: #df9b72;
+  --accent-3: #ead5c2;
+  --shadow: 0 30px 90px rgba(92, 61, 45, 0.14);
   --radius: 28px;
   --max: 1120px;
 }
@@ -32,9 +32,9 @@ body {
     "Yu Gothic", Meiryo, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 10% 0%, rgba(182, 108, 255, 0.24), transparent 30rem),
-    radial-gradient(circle at 92% 8%, rgba(92, 225, 255, 0.14), transparent 34rem),
-    linear-gradient(180deg, #07070b 0%, #050507 42%, #090611 100%);
+    radial-gradient(circle at 10% 0%, rgba(201, 120, 92, 0.2), transparent 30rem),
+    radial-gradient(circle at 92% 8%, rgba(223, 155, 114, 0.18), transparent 34rem),
+    linear-gradient(180deg, #fff9f2 0%, var(--bg) 42%, #ead5c2 100%);
   overflow-x: hidden;
 }
 
@@ -50,8 +50,8 @@ a {
   pointer-events: none;
   z-index: 1;
   background-image:
-    repeating-radial-gradient(circle at 17% 32%, rgba(255,255,255,0.16) 0 1px, transparent 1px 7px);
-  mix-blend-mode: overlay;
+    repeating-radial-gradient(circle at 17% 32%, rgba(51, 40, 34, 0.08) 0 1px, transparent 1px 7px);
+  mix-blend-mode: multiply;
 }
 
 .orb {
@@ -91,7 +91,7 @@ a {
 }
 
 .site-header.is-scrolled {
-  background: rgba(5, 5, 7, 0.72);
+  background: rgba(247, 241, 232, 0.82);
   border-color: var(--line);
   backdrop-filter: blur(18px);
 }
@@ -202,7 +202,7 @@ h1 {
 
 h1 span {
   display: block;
-  background: linear-gradient(112deg, #fff 0%, #e7d7ff 38%, #81edff 70%, #ff8cdf 100%);
+  background: linear-gradient(112deg, var(--text) 0%, #78675d 38%, var(--accent) 70%, var(--accent-2) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -247,14 +247,14 @@ h3 {
 }
 
 .button.primary {
-  color: #07070b;
+  color: var(--text);
   border: 0;
-  background: linear-gradient(90deg, #fff, #81edff 50%, #ff8cdf);
-  box-shadow: 0 18px 54px rgba(182, 108, 255, 0.24);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 18px 54px rgba(201, 120, 92, 0.24);
 }
 
 .button.ghost {
-  background: rgba(255, 255, 255, 0.055);
+  background: rgba(255, 249, 242, 0.56);
 }
 
 .hero-visual {
@@ -268,8 +268,8 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 38px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045)),
-    rgba(255,255,255,0.03);
+    linear-gradient(180deg, rgba(255, 249, 242, 0.92), rgba(234, 213, 194, 0.48)),
+    rgba(255, 249, 242, 0.72);
   box-shadow: var(--shadow);
   overflow: hidden;
   transform: rotate(2deg);
@@ -279,7 +279,7 @@ h3 {
   display: block;
   width: 100%;
   border-radius: 26px;
-  border: 1px solid rgba(255,255,255,0.14);
+  border: 1px solid var(--line);
 }
 
 .record-glow {
@@ -288,7 +288,7 @@ h3 {
   width: 64%;
   aspect-ratio: 1;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 78, 205, 0.5), transparent 68%);
+  background: radial-gradient(circle, rgba(201, 120, 92, 0.42), transparent 68%);
   filter: blur(20px);
 }
 
@@ -370,7 +370,7 @@ h3 {
   justify-content: center;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.055);
+  background: rgba(255, 249, 242, 0.56);
   color: var(--text);
   font-weight: 740;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
@@ -380,7 +380,7 @@ h3 {
 .socials a:hover {
   transform: translateY(-3px);
   background: var(--panel-strong);
-  border-color: rgba(255, 255, 255, 0.34);
+  border-color: rgba(201, 120, 92, 0.48);
 }
 
 .cards {
@@ -399,8 +399,8 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background:
-    linear-gradient(145deg, rgba(182,108,255,0.18), rgba(92,225,255,0.055)),
-    rgba(255,255,255,0.04);
+    linear-gradient(145deg, rgba(234, 213, 194, 0.72), rgba(223, 155, 114, 0.18)),
+    rgba(255, 249, 242, 0.68);
   overflow: hidden;
   position: relative;
 }
@@ -413,7 +413,7 @@ h3 {
   right: -70px;
   top: -70px;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(255,255,255,0.28), transparent 64%);
+  background: radial-gradient(circle, rgba(255, 249, 242, 0.82), transparent 64%);
 }
 
 .song-number {
@@ -524,7 +524,7 @@ h3 {
     align-items: flex-start;
     justify-content: center;
     padding: 40px;
-    background: rgba(5, 5, 7, 0.88);
+    background: rgba(247, 241, 232, 0.94);
     border-left: 1px solid var(--line);
     backdrop-filter: blur(20px);
     transform: translateX(100%);
