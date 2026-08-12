@@ -444,6 +444,51 @@ h3 {
   font-size: clamp(2.4rem, 7vw, 6.6rem);
 }
 
+.profile-frame {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.82fr) 1.18fr;
+  align-items: center;
+  gap: clamp(28px, 5vw, 58px);
+}
+
+.profile-photo,
+.live-photo {
+  margin: 0;
+  overflow: hidden;
+  background: var(--text);
+}
+
+.profile-photo {
+  aspect-ratio: 2 / 3;
+  border-radius: calc(var(--radius) - 8px);
+}
+
+.profile-photo img,
+.live-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: sepia(0.08) contrast(1.04);
+}
+
+.profile-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.live-photo {
+  width: min(100%, 320px);
+  aspect-ratio: 4 / 5;
+  margin-top: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transform: rotate(-2deg);
+}
+
+.live-photo img {
+  object-position: 50% 38%;
+}
+
 .timeline {
   display: grid;
   gap: 18px;
@@ -548,7 +593,8 @@ h3 {
   }
 
   .hero,
-  .split {
+  .split,
+  .profile-frame {
     grid-template-columns: 1fr;
   }
 
@@ -558,6 +604,15 @@ h3 {
 
   .hero-visual {
     width: min(100%, 340px);
+  }
+
+  .profile-photo {
+    width: min(100%, 430px);
+    justify-self: center;
+  }
+
+  .live-photo {
+    width: min(82%, 360px);
   }
 
   .scroll-note {
